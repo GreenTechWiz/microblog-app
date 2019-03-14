@@ -1,0 +1,11 @@
+<div id="chirp-feed">
+  <h1>Your Chirps Feed:</h1>
+
+  <% @chirps.each do |chirp| %>
+    <div class="chirp">
+      <h3><%= chirp.formatted_time %></h3>
+      <p><%= link_to("#{chirp.content}", "/chirps/#{chirp.id}") %></p>
+
+    </div>
+  <% end %>
+</div>
