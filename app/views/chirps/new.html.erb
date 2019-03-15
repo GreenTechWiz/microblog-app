@@ -1,0 +1,13 @@
+<h1>What's on you mind?</h1>
+
+<%= form_tag("/chirps", method: :post) do %>
+<!--   <label for="content">Chirp Away:</label>
+  <textarea name="content" id="content"></textarea>
+  <input type="submit" value="Create Chirp" > -->
+
+  <%= label_tag('content', 'Enter Chirp Content:') %>
+  <br>
+  <%= text_area_tag('content', nil, size: '25x12') %>
+  <br>
+  <%= submit_tag("Chirp!") %>
+<% end %>
