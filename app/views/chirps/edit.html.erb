@@ -1,0 +1,13 @@
+<h1>Changin Chrip?</h1>
+
+<%= form_tag("/chirps/#{@chirp.id}", method: :put) do %>
+<!--   <label for="content">Chirp Away:</label>
+  <textarea name="content" id="content"></textarea>
+  <input type="submit" value="Create Chirp" > -->
+
+  <%= label_tag('content', 'Edit Chirp Content:') %>
+  <br>
+  <%= text_area_tag('content', @chirp.content, size: '25x12') %>
+  <br>
+  <%= submit_tag("Chirp!") %>
+<% end %>

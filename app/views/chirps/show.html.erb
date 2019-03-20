@@ -1,2 +1,4 @@
 <h3><%= @chirp.formatted_time %></h3>
 <p><%= @chirp.content %></p>
+<%= link_to("Edit Chirp", "/chirps/#{@chirp.id}/edit") %>
+<%= link_to("Delete Chirp", "/chirps/#{@chirp.id}", method: :delete) %>
