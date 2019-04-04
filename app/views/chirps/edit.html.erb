@@ -1,13 +1,22 @@
-<h1>Changin Chrip?</h1>
+<h1>Changin Chirp?</h1>
+
+<% if @error_messages.any? %>
+  <div id="error-explanation">
+    <h2><%= pluralize(@error_messages.count, "error") %>  prevented this Chirp from being updated:</h2>
+
+    <ul>
+      <% @error_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <%= form_tag("/chirps/#{@chirp.id}", method: :put) do %>
-<!--   <label for="content">Chirp Away:</label>
-  <textarea name="content" id="content"></textarea>
-  <input type="submit" value="Create Chirp" > -->
-
+  <div class="form-group">
+    
   <%= label_tag('content', 'Edit Chirp Content:') %>
-  <br>
-  <%= text_area_tag('content', @chirp.content, size: '25x12') %>
-  <br>
-  <%= submit_tag("Chirp!") %>
+  <%= text_area_tag('content', @chirp.content, size: '40x10', class: "form-control") %>
+  </div>
+  <%= submit_tag("Chirp!", class: "btn btn-success") %>
 <% end %>

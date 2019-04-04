@@ -1,0 +1,10 @@
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<p class="text-muted">Followers: <%= @user.followers.count %></p>
+<p class="text-muted">Following: <%= @user.followees.count %></p>
+
+<% if current_user.id == @user.id %>
+<% elsif !current_user.followees.include?(@user) %>
+  <%= link_to("Follow", "/users/#{@user.id}/relationships", method: :post, class: "btn btn-dark") %>
+<% else %>
+  <p class="text-muted">You're following <%= @user.first_name %></p>
+<% end %>
